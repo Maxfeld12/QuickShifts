@@ -6,22 +6,23 @@
     <title>QuickShifts - Restaurant Staffing Solutions</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f3f4f6;
             color: #333;
         }
 
         header {
-            background-color: #ff7043;
+            background-color: #2d4059;
             color: white;
             text-align: center;
             padding: 2rem 0;
+            font-size: 1.5rem;
         }
 
         nav {
-            background-color: #333;
+            background-color: #ea5455;
             padding: 1rem;
             text-align: center;
         }
@@ -34,7 +35,7 @@
         }
 
         nav a:hover {
-            color: #ff7043;
+            color: #2d4059;
         }
 
         .container {
@@ -48,7 +49,7 @@
         }
 
         h1, h2 {
-            color: #ff7043;
+            color: #ea5455;
             text-align: center;
         }
 
@@ -75,7 +76,7 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #2d4059;
             color: white;
             text-align: center;
             padding: 1rem 0;
@@ -92,7 +93,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        input[type="text"], input[type="email"], select {
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
@@ -101,8 +102,17 @@
             font-size: 16px;
         }
 
+        input[type="file"] {
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+        }
+
         input[type="submit"] {
-            background-color: #ff7043;
+            background-color: #ea5455;
             color: white;
             padding: 12px;
             border: none;
@@ -111,14 +121,14 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #333;
+            background-color: #2d4059;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>QuickShifts - Your Partner in Restaurant Staffing Solutions</h1>
+        <h1>QuickShifts - Revolutionizing Restaurant Staffing</h1>
     </header>
 
     <nav>
@@ -129,39 +139,51 @@
 
     <section id="home" class="container">
         <h1>Welcome to QuickShifts</h1>
-        <p>We specialize in connecting restaurants with temporary staff to help with high turnover rates. Our system provides staff on demand, ensuring that restaurants remain fully operational during busy times.</p>
+        <p>We specialize in connecting restaurants with the perfect temporary staff. Whether you're looking for flexible shifts or experienced workers, QuickShifts has you covered.</p>
     </section>
 
     <section id="services" class="container">
         <h1>Our Services</h1>
         <div class="services">
             <div>
-                <img src="restaurant1.jpg" alt="Temporary Staffing">
+                <img src="IMG_8672.jpg" alt="Temporary Staffing">
                 <h2>Temporary Staffing</h2>
-                <p>We provide temporary staff for restaurants, ensuring you have the manpower needed to handle busy periods.</p>
+                <p>We provide temporary staff for restaurants, ensuring you have the manpower needed to handle busy periods with ease.</p>
             </div>
             <div>
-                <img src="restaurant2.jpg" alt="Flexible Scheduling">
+                <img src="IMG_8806.jpg" alt="Flexible Scheduling">
                 <h2>Flexible Scheduling</h2>
-                <p>Our flexible scheduling system allows restaurants to book staff for specific hours, days, or weeks.</p>
+                <p>Our flexible scheduling system allows restaurants to book staff for specific hours, days, or weeks according to their needs.</p>
             </div>
             <div>
-                <img src="restaurant3.jpg" alt="Experienced Workers">
+                <img src="IMG_8806.jpg" alt="Experienced Workers">
                 <h2>Experienced Workers</h2>
-                <p>All our workers are experienced in the restaurant industry, so you can trust they know how to get the job done right.</p>
+                <p>All our workers are experienced in the restaurant industry, so you can trust them to get the job done right the first time.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="container">
         <h1>Contact Us</h1>
-        <p>If you're a restaurant owner looking to hire staff, or you're interested in working with us, please fill out the form below:</p>
-        <form action="submit_form.php" method="POST">
+        <p>If you're a restaurant owner looking to hire staff or a potential employee looking for opportunities, please fill out the form below:</p>
+        <form action="submit_form.php" method="POST" enctype="multipart/form-data">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
 
             <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required>
+
+            <label for="phone">Your Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="age">Your Age:</label>
+            <input type="number" id="age" name="age" min="18" required>
+
+            <label for="cv">Upload Your CV:</label>
+            <input type="file" id="cv" name="cv" required>
+
+            <label for="about">Tell Us About Yourself:</label>
+            <textarea id="about" name="about" rows="5" required></textarea>
 
             <label for="role">I am a:</label>
             <select id="role" name="role">
