@@ -1,0 +1,56 @@
+<header>
+  <h1>Restaurant Staffing Solutions</h1>
+  <p>Your partner in providing temporary staff for restaurants</p>
+</header>
+<nav><a href="index.html">Home</a> <a href="services.html">Our
+    Services</a> <a href="contact.html">Contact Us</a></nav>
+<section id="home">
+  <h1>Welcome to Restaurant Staffing Solutions</h1>
+  <p>We specialize in connecting restaurants with temporary staff to
+    help with high turnover rates. Our system is designed o provide
+    staff on demand, ensuring that restaurants remain fully
+    operational during busy times.</p>
+  <img src="mnt/data/IMG_8672.heic" alt="Restaurant atmosphere"
+  style="max-width: 100%; height: auto; border-radius: 8px;">
+</section>
+<section id="services">
+  <h1>Our Services</h1>
+  <div class="services">
+    <div>
+      <h2>Temporary Staffing</h2>
+      <p>We provide temporary staff for restaurants, ensuring you have
+        the manpower needed to handle busy periods.</p>
+    </div>
+    <div>
+      <h2>Flexible Scheduling</h2>
+      <p>Our flexible scheduling system allows restaurants to book
+        staff for specific hours, days, or weeks.</p>
+    </div>
+    <div>
+      <h2>Experienced Workers</h2>
+      <p>All our workers are experienced in the restaurant industry, so
+        you can trust they know how to get the job done right.</p>
+    </div>
+  </div>
+  <img src="mnt/data/Sarah Dame Photo.png"
+  alt="A friendly staff member at work"
+  style="max-width: 100%; height: auto; border-radius: 8px;">
+</section>
+<section id="contact">
+  <h1>Contact Us</h1>
+  <p>If you're a restaurant owner looking to hire staff, or you're
+    interested in working with us, please fill out the form below:</p>
+  <p></p>
+  <form action="mailto:jsfeldman11@gmail.com"><label for="name">Your
+      Name:</label> <input type="text" required=""> <label
+    for="email">Your Email:</label> <input type="email" id="email"
+    name="email" required=""> <label for="role">I am
+      a:</label><select>
+      <option value="restaurant">Restaurant Owner</option>
+      <option value="employee">Temporary Employee</option>
+    </select><input type="submit" value="Submit"></form>
+</section>
+<footer>
+  <p>&copy; 2024 Restaurant Staffing Solutions. All rights reserved.
+  </p>
+</footer>
