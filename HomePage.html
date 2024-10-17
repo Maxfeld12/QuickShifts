@@ -1,5 +1,11 @@
+To ensure the images in your code adjust properly to both computer and phone screens, I will modify the image styles to be responsive using `max-width` and `height` auto-adjustments. Here’s the updated version of your code:
+
+### Updated Code with Responsive Images
+
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,6 +64,7 @@
             display: flex;
             justify-content: space-around;
             margin-top: 40px;
+            flex-wrap: wrap;
         }
 
         .services div {
@@ -66,11 +73,13 @@
             border: 1px solid #ccc;
             width: 30%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
         .services img {
             width: 100%;
-            height: 200px;
+            max-width: 100%;
+            height: auto; /* Adjusts the height proportionally */
             object-fit: cover;
             margin-bottom: 15px;
         }
@@ -152,7 +161,6 @@
 
             .services div {
                 width: 80%;  /* Adjust the width to make it fit better on small screens */
-                margin-bottom: 20px;
             }
 
             form {
@@ -174,7 +182,6 @@
 
             .services div {
                 width: 100%;  /* Full width on mobile */
-                margin-bottom: 20px;
             }
 
             form {
@@ -203,6 +210,7 @@
         }
     </script>
 </head>
+
 <body>
 
     <header>
@@ -272,27 +280,4 @@
                 <textarea id="about" name="about" rows="5" placeholder="Describe your skills, experience, and why we should hire you." required></textarea>
 
                 <label for="references">References (Include contact details for your references):</label>
-                <textarea id="references" name="references" rows="5" placeholder="Provide the names, phone numbers, and email addresses of 2-3 references." required></textarea>
-            </div>
-
-            <!-- Fields for restaurant owners -->
-            <div id="restaurant-fields" style="display:none;">
-                <h3>What type of service do you need?</h3>
-                <div class="service-checkboxes">
-                    <label><input type="checkbox" name="service[]" value="Waiter"> Waiter</label>
-                    <label><input type="checkbox" name="service[]" value="Busboy"> Busboy</label>
-                    <label><input type="checkbox" name="service[]" value="Hostess"> Hostess</label>
-                    <label><input type="checkbox" name="service[]" value="Bartender"> Bartender</label>
-                </div>
-            </div>
-
-            <input type="submit" value="Submit">
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 QuickShifts. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+                <textarea id="references" name="references"
