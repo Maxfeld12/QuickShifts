@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply with QuickShifts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        header {
+            background-color: #2d4059;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1.5rem;
+        }
+
+        nav {
+            background-color: #ea5455;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #2d4059;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ea5455;
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 30px auto;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .service-checkboxes label {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #ea5455;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2d4059;
+        }
+
+        @media screen and (max-width: 768px) {
+            form {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            form {
+                padding: 15px;
+                width: 90%;
+            }
+        }
+    </style>
+    <script>
+        function updateForm(role) {
+            var employeeFields = document.getElementById('employee-fields');
+            var restaurantFields = document.getElementById('restaurant-fields');
+
+            if (role === 'employee') {
+                employeeFields.style.display = 'block';
+                restaurantFields.style.display = 'none';
+            } else {
+                employeeFields.style.display = 'none';
+                restaurantFields.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Apply with QuickShifts</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="form.html">Apply Now</a>
+    </nav>
+
+    <section class="container">
+        <h1>Apply with QuickShifts</h1>
+        <p>Fill out the form below to apply for temporary staffing positions or to work with us. Please provide as much information as possible so we can find the perfect fit for you!</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Your Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="role">I am a:</label>
+            <select id="role" name="role" onchange="updateForm(this.value)">
+                <option value="employee">Temporary Employee</option>
+                <option value="restaurant">Restaurant Owner</option>
+            </select>
+
+            <!-- Fields for employees -->
+            <div id="employee-fields" style="display:none;">
+                <label for="about">Tell Us About Yourself:</label>
+                <textarea id="about" name="about" rows="5" required></textarea>
+
+                <label for="references">References:</label>
+                <textarea id="references" name="references" rows="5" required></textarea>
+            </div>
+
+            <!-- Fields for restaurant owners -->
+            <div id="restaurant-fields" style="display:none;">
+                <h3>What type of service do you need?</h3>
+                <div class="service-checkboxes">
+                    <label><input type="checkbox" name="service[]" value="Waiter"> Waiter</label>
+                    <label><input type="checkbox" name="service[]" value="Busboy"> Busboy</label>
+                    <label><input type="checkbox" name="service[]" value="Hostess"> Hostess</label>
+                    <label><input type="checkbox" name="service[]" value="Bartender"> Bartender</label>
+                </div>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+</body>
+
+</html>
