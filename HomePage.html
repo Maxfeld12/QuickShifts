@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickShifts - Restaurant Staffing Solutions</title>
+    <title>QuickShifts - Revolutionizing Restaurant Staffing</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -123,6 +123,7 @@
         input[type="submit"]:hover {
             background-color: #2d4059;
         }
+
     </style>
 </head>
 <body>
@@ -164,8 +165,8 @@
     </section>
 
     <section id="contact" class="container">
-        <h1>Contact Us</h1>
-        <p>If you're a restaurant owner looking to hire staff or a potential employee looking for opportunities, please fill out the form below:</p>
+        <h1>Apply with QuickShifts</h1>
+        <p>Fill out the form below to apply for temporary staffing positions or to work with us. Please provide as much information as possible so we can find the perfect fit for you!</p>
         <form action="submit_form.php" method="POST" enctype="multipart/form-data">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
@@ -182,8 +183,11 @@
             <label for="cv">Upload Your CV:</label>
             <input type="file" id="cv" name="cv" required>
 
-            <label for="about">Tell Us About Yourself:</label>
-            <textarea id="about" name="about" rows="5" required></textarea>
+            <label for="about">Tell Us About Yourself: (What makes you stand out?)</label>
+            <textarea id="about" name="about" rows="5" placeholder="Describe your skills, experience, and why we should hire you." required></textarea>
+
+            <label for="references">References (Include contact details for your references):</label>
+            <textarea id="references" name="references" rows="5" placeholder="Provide the names, phone numbers, and email addresses of 2-3 references." required></textarea>
 
             <label for="role">I am a:</label>
             <select id="role" name="role">
