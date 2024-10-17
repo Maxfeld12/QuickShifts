@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -74,7 +74,7 @@
         .services img {
             width: 100%;
             max-width: 100%;
-            height: auto; /* Adjusts the height proportionally */
+            height: auto;
             object-fit: cover;
             margin-bottom: 15px;
         }
@@ -106,15 +106,6 @@
             font-size: 16px;
         }
 
-        input[type="file"] {
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            width: 100%;
-        }
-
         input[type="checkbox"] {
             margin-right: 10px;
         }
@@ -137,25 +128,14 @@
         }
 
         /* MEDIA QUERIES FOR RESPONSIVENESS */
-
-        /* For devices with width less than 768px (tablets, phones) */
         @media screen and (max-width: 768px) {
-            header {
-                font-size: 1.2rem;
-                padding: 1.5rem 0;
-            }
-
-            nav a {
-                margin: 0 10px;
-            }
-
             .services {
                 flex-direction: column;
                 align-items: center;
             }
 
             .services div {
-                width: 80%;  /* Adjust the width to make it fit better on small screens */
+                width: 80%;
             }
 
             form {
@@ -163,30 +143,19 @@
             }
         }
 
-        /* For devices with width less than 480px (mobile phones) */
         @media screen and (max-width: 480px) {
-            header {
-                font-size: 1rem;
-                padding: 1rem 0;
-            }
-
             nav a {
                 display: block;
-                margin: 10px 0;  /* Stack the navigation links on top of each other */
+                margin: 10px 0;
             }
 
             .services div {
-                width: 100%;  /* Full width on mobile */
+                width: 100%;
             }
 
             form {
                 padding: 15px;
                 width: 90%;
-            }
-
-            input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select {
-                font-size: 14px;
-                padding: 10px;  /* Slightly smaller input fields on mobile */
             }
         }
     </style>
@@ -247,7 +216,7 @@
     <section id="contact" class="container">
         <h1>Apply with QuickShifts</h1>
         <p>Fill out the form below to apply for temporary staffing positions or to work with us. Please provide as much information as possible so we can find the perfect fit for you!</p>
-        <form action="submit_form.php" method="POST" enctype="multipart/form-data">
+        <form action="send_email.php" method="POST" enctype="multipart/form-data">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -265,12 +234,6 @@
 
             <!-- Fields for employees -->
             <div id="employee-fields" style="display:none;">
-                <label for="photo">Upload Your Photo:</label>
-                <input type="file" id="photo" name="photo" required>
-
-                <label for="cv">Upload Your CV:</label>
-                <input type="file" id="cv" name="cv" required>
-
                 <label for="about">Tell Us About Yourself: (What makes you stand out?)</label>
                 <textarea id="about" name="about" rows="5" placeholder="Describe your skills, experience, and why we should hire you." required></textarea>
 
