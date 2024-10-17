@@ -111,6 +111,14 @@
             width: 100%;
         }
 
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .service-checkboxes label {
+            margin-right: 10px;
+        }
+
         input[type="submit"] {
             background-color: #ea5455;
             color: white;
@@ -125,6 +133,20 @@
         }
 
     </style>
+    <script>
+        function updateForm(role) {
+            var employeeFields = document.getElementById('employee-fields');
+            var restaurantFields = document.getElementById('restaurant-fields');
+
+            if (role === 'employee') {
+                employeeFields.style.display = 'block';
+                restaurantFields.style.display = 'none';
+            } else {
+                employeeFields.style.display = 'none';
+                restaurantFields.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -140,7 +162,7 @@
 
     <section id="home" class="container">
         <h1>Welcome to QuickShifts</h1>
-        <p>We specialize in connecting restaurants with the perfect temporary staff. Whether you're looking for flexible shifts or experienced workers, QuickShifts has you covered.</p>
+        <p>We specialize in connecting restaurants with the perfect temporary staff. Whether you're looking for flexible shifts or experienced workers, QuickShifts has you covered. All of our employees are **certified** in their respective fields to ensure high-quality service for your business.</p>
     </section>
 
     <section id="services" class="container">
@@ -158,8 +180,8 @@
             </div>
             <div>
                 <img src="IMG_8806.jpg" alt="Experienced Workers">
-                <h2>Experienced Workers</h2>
-                <p>All our workers are experienced in the restaurant industry, so you can trust them to get the job done right the first time.</p>
+                <h2>Certified Employees</h2>
+                <p>All our workers are certified professionals in the restaurant industry, ensuring they provide high-quality service for any role.</p>
             </div>
         </div>
     </section>
@@ -177,23 +199,37 @@
             <label for="phone">Your Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
 
-            <label for="age">Your Age:</label>
-            <input type="number" id="age" name="age" min="18" required>
-
-            <label for="cv">Upload Your CV:</label>
-            <input type="file" id="cv" name="cv" required>
-
-            <label for="about">Tell Us About Yourself: (What makes you stand out?)</label>
-            <textarea id="about" name="about" rows="5" placeholder="Describe your skills, experience, and why we should hire you." required></textarea>
-
-            <label for="references">References (Include contact details for your references):</label>
-            <textarea id="references" name="references" rows="5" placeholder="Provide the names, phone numbers, and email addresses of 2-3 references." required></textarea>
-
             <label for="role">I am a:</label>
-            <select id="role" name="role">
-                <option value="restaurant">Restaurant Owner</option>
+            <select id="role" name="role" onchange="updateForm(this.value)">
                 <option value="employee">Temporary Employee</option>
+                <option value="restaurant">Restaurant Owner</option>
             </select>
+
+            <!-- Fields for employees -->
+            <div id="employee-fields" style="display:none;">
+                <label for="photo">Upload Your Photo:</label>
+                <input type="file" id="photo" name="photo" required>
+
+                <label for="cv">Upload Your CV:</label>
+                <input type="file" id="cv" name="cv" required>
+
+                <label for="about">Tell Us About Yourself: (What makes you stand out?)</label>
+                <textarea id="about" name="about" rows="5" placeholder="Describe your skills, experience, and why we should hire you." required></textarea>
+
+                <label for="references">References (Include contact details for your references):</label>
+                <textarea id="references" name="references" rows="5" placeholder="Provide the names, phone numbers, and email addresses of 2-3 references." required></textarea>
+            </div>
+
+            <!-- Fields for restaurant owners -->
+            <div id="restaurant-fields" style="display:none;">
+                <h3>What type of service do you need?</h3>
+                <div class="service-checkboxes">
+                    <label><input type="checkbox" name="service[]" value="Waiter"> Waiter</label>
+                    <label><input type="checkbox" name="service[]" value="Busboy"> Busboy</label>
+                    <label><input type="checkbox" name="service[]" value="Hostess"> Hostess</label>
+                    <label><input type="checkbox" name="service[]" value="Bartender"> Bartender</label>
+                </div>
+            </div>
 
             <input type="submit" value="Submit">
         </form>
