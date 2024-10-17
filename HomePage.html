@@ -1,60 +1,77 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Staffing Solutions</title>
+    <title>QuickShifts - Restaurant Staffing Solutions</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
+            color: #333;
         }
 
         header {
-            background-color: #333;
+            background-color: #ff7043;
             color: white;
             text-align: center;
-            padding: 1rem 0;
+            padding: 2rem 0;
         }
 
         nav {
-            background-color: #555;
-            padding: 10px;
+            background-color: #333;
+            padding: 1rem;
             text-align: center;
         }
 
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
+            font-weight: bold;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #ff7043;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
         }
 
         section {
-            padding: 20px;
+            padding: 40px 0;
         }
 
-        h1 {
-            color: #333;
+        h1, h2 {
+            color: #ff7043;
+            text-align: center;
         }
 
+        /* Service Section */
         .services {
             display: flex;
             justify-content: space-around;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .services div {
             background-color: white;
-            padding: 20px;
+            padding: 30px;
             border: 1px solid #ccc;
             width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .services img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
         }
 
         footer {
@@ -62,32 +79,35 @@
             color: white;
             text-align: center;
             padding: 1rem 0;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         form {
             background-color: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
-            max-width: 500px;
-            margin: 20px auto;
+            max-width: 600px;
+            margin: 30px auto;
             border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         input[type="text"], input[type="email"], select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             border-radius: 4px;
             border: 1px solid #ccc;
+            font-size: 16px;
         }
 
         input[type="submit"] {
-            background-color: #555;
+            background-color: #ff7043;
             color: white;
-            padding: 10px;
+            padding: 12px;
             border: none;
             cursor: pointer;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover {
@@ -95,12 +115,10 @@
         }
     </style>
 </head>
-
 <body>
 
     <header>
-        <h1>Restaurant Staffing Solutions</h1>
-        <p>Your partner in providing temporary staff for restaurants</p>
+        <h1>QuickShifts - Your Partner in Restaurant Staffing Solutions</h1>
     </header>
 
     <nav>
@@ -109,33 +127,36 @@
         <a href="#contact">Contact Us</a>
     </nav>
 
-    <section id="home">
-        <h1>Welcome to Restaurant Staffing Solutions</h1>
-        <p>We specialize in connecting restaurants with temporary staff to help with high turnover rates. Our system is designed to provide staff on demand, ensuring that restaurants remain fully operational during busy times.</p>
+    <section id="home" class="container">
+        <h1>Welcome to QuickShifts</h1>
+        <p>We specialize in connecting restaurants with temporary staff to help with high turnover rates. Our system provides staff on demand, ensuring that restaurants remain fully operational during busy times.</p>
     </section>
 
-    <section id="services">
+    <section id="services" class="container">
         <h1>Our Services</h1>
         <div class="services">
             <div>
+                <img src="restaurant1.jpg" alt="Temporary Staffing">
                 <h2>Temporary Staffing</h2>
                 <p>We provide temporary staff for restaurants, ensuring you have the manpower needed to handle busy periods.</p>
             </div>
             <div>
+                <img src="restaurant2.jpg" alt="Flexible Scheduling">
                 <h2>Flexible Scheduling</h2>
                 <p>Our flexible scheduling system allows restaurants to book staff for specific hours, days, or weeks.</p>
             </div>
             <div>
+                <img src="restaurant3.jpg" alt="Experienced Workers">
                 <h2>Experienced Workers</h2>
                 <p>All our workers are experienced in the restaurant industry, so you can trust they know how to get the job done right.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="container">
         <h1>Contact Us</h1>
         <p>If you're a restaurant owner looking to hire staff, or you're interested in working with us, please fill out the form below:</p>
-        <form>
+        <form action="submit_form.php" method="POST">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -153,9 +174,8 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Restaurant Staffing Solutions. All rights reserved.</p>
+        <p>&copy; 2024 QuickShifts. All rights reserved.</p>
     </footer>
 
 </body>
-
 </html>
