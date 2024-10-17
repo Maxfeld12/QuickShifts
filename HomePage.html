@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -54,7 +54,6 @@
             text-align: center;
         }
 
-        /* Service Section */
         .services {
             display: flex;
             justify-content: space-around;
@@ -97,7 +96,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select {
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
@@ -127,7 +126,6 @@
             background-color: #2d4059;
         }
 
-        /* MEDIA QUERIES FOR RESPONSIVENESS */
         @media screen and (max-width: 768px) {
             .services {
                 flex-direction: column;
@@ -189,7 +187,7 @@
 
     <section id="home" class="container">
         <h1>Welcome to QuickShifts</h1>
-        <p>We specialize in connecting restaurants with the perfect temporary staff. Whether you're looking for flexible shifts or experienced workers, QuickShifts has you covered. All of our employees are **certified** in their respective fields to ensure high-quality service for your business.</p>
+        <p>We specialize in connecting restaurants with the perfect temporary staff. Whether you're looking for flexible shifts or experienced workers, QuickShifts has you covered. All of our employees are certified in their respective fields to ensure high-quality service for your business.</p>
     </section>
 
     <section id="services" class="container">
@@ -216,7 +214,8 @@
     <section id="contact" class="container">
         <h1>Apply with QuickShifts</h1>
         <p>Fill out the form below to apply for temporary staffing positions or to work with us. Please provide as much information as possible so we can find the perfect fit for you!</p>
-        <form action="send_email.php" method="POST" enctype="multipart/form-data">
+        <!-- Formspree form -->
+        <form action="https://formspree.io/f/movqqbww" method="POST">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -232,16 +231,14 @@
                 <option value="restaurant">Restaurant Owner</option>
             </select>
 
-            <!-- Fields for employees -->
             <div id="employee-fields" style="display:none;">
-                <label for="about">Tell Us About Yourself: (What makes you stand out?)</label>
-                <textarea id="about" name="about" rows="5" placeholder="Describe your skills, experience, and why we should hire you." required></textarea>
+                <label for="about">Tell Us About Yourself:</label>
+                <textarea id="about" name="about" rows="5" required></textarea>
 
-                <label for="references">References (Include contact details for your references):</label>
-                <textarea id="references" name="references" rows="5" placeholder="Provide the names, phone numbers, and email addresses of 2-3 references." required></textarea>
+                <label for="references">References:</label>
+                <textarea id="references" name="references" rows="5" required></textarea>
             </div>
 
-            <!-- Fields for restaurant owners -->
             <div id="restaurant-fields" style="display:none;">
                 <h3>What type of service do you need?</h3>
                 <div class="service-checkboxes">
